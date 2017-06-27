@@ -74,3 +74,29 @@ class Avaluo(models.Model):
     geom = models.PointField()
         #default = GEOSGeometry('POINT(-74 4)', srid=4686)
     #)
+class Barrio(models.Model):
+    """
+    Entidad que representa un Barrio
+    """
+    gid = models.IntegerField(
+        verbose_name="GID",
+    )
+    nombre= models.CharField(
+        max_length=40,
+        verbose_name="Nombre",
+    )
+    amun_codgr= models.CharField(
+        max_length=5,
+        verbose_name="Codigo Municipio",
+    )
+    amun_nombr= models.CharField(
+        max_length=100,
+        verbose_name="Nombre Municipio",
+    )
+    zona_id= models.IntegerField(
+        verbose_name="Zona ID",
+    )
+    vpm2= models.IntegerField(
+        verbose_name="Zona ID",
+    )
+    geom = models.MultPolygonField()
